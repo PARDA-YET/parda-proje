@@ -1,6 +1,6 @@
 // Giriş kontrolü
 if (sessionStorage.getItem("girisYapildi") !== "true") {
-    window.location.href = "giris.html";
+    window.location.href = "index.html";
 }
 
 // Ürünleri JSON'dan çek
@@ -73,3 +73,4 @@ function urunSil(id) {
     })
     .catch(error => console.error("Silme hatası:", error));
 }
+

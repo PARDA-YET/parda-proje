@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Giriş</title>
-  <link rel="stylesheet" href="Frontend/css/styles.css" />
+    <meta charset="UTF-8">
+    <title>Yönetici Girişi</title>
 </head>
 <body>
-  <div class="container">
-    <h2>Giriş Yap</h2>
-    <input type="password" id="password" placeholder="Şifre girin" />
-    <button onclick="girisYap()">Giriş Yap</button>
-  </div>
-  <script src="Frontend/js/giris.js"></script>
+    <h2>Yönetici Giriş Paneli</h2>
+    <form id="giris-form">
+        <input type="text" id="kullanici" placeholder="Kullanıcı Adı"><br><br>
+        <input type="password" id="sifre" placeholder="Şifre"><br><br>
+        <button type="submit">Giriş Yap</button>
+    </form>
+    <p id="hata-mesaji" style="color:red;"></p>
+
+    <script src="js/giris.js"></script>
 </body>
 </html>
 
