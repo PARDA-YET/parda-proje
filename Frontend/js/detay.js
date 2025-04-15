@@ -1,29 +1,17 @@
-// URL'den ürün ID'sini al
 const urlParams = new URLSearchParams(window.location.search);
-const urunId = urlParams.get("id");
+const id = urlParams.get("id");
 
-if (!urunId) {
-    document.getElementById("urun-detay").innerHTML = "<p>Ürün bulunamadı.</p>";
-} else {
-    fetch(`http://localhost:3000/urunler/${urunId}`)
-        .then(res => res.json())
-        .then(urun => {
-            document.getElementById("urun-ad").textContent = urun.ad;
-            document.getElementById("urun-foto").src = urun.foto;
-            document.getElementById("urun-aciklama").textContent = urun.aciklama;
-            document.getElementById("urun-marka").textContent = urun.marka;
-
-            const ozelliklerUl = document.getElementById("urun-ozellikler");
-            urun.ozellikler.forEach(ozellik => {
-                const li = document.createElement("li");
-                li.textContent = ozellik;
-                ozelliklerUl.appendChild(li);
-            });
-
-            document.getElementById("urun-video").src = urun.video;
-        })
-        .catch(error => {
-            console.error("Ürün alınırken hata oluştu:", error);
-            document.getElementById("urun-detay").innerHTML = "<p>Ürün bilgisi yüklenemedi.</p>";
-        });
-}
+fetch("Backend/urunler.json")
+  .then(response => response.json())
+  .then(data => {
+    const urun = data.find(u => u.id == id);
+    if (urun) {
+      document.getElementById("detay").innerHTML = `
+        <h3>${urun.ad}</h3>
+        <p>${urun.aciklama}</p>
+        <p>Fiyat: ${urun.fiyat} TL</p>
+      `;
+    } else {
+      document.getElementById("detay").innerHTML = "Ürün bulunamadı.";
+    }
+  });
