@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 8px;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    color: #444;
+}
+

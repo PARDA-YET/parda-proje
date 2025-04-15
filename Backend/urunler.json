@@ -1,0 +1,12 @@
+{
+  "urunler": {
+    "urun1": {
+      "ad": "YAPIKİM 100",
+      "foto": "resim1.jpg",
+      "video": "abc123",
+      "aciklama": "Yapı kimyasalı açıklaması.",
+      "marka": "marka1.png",
+      "ozellikler": ["Su geçirmez", "Kolay uygulanır"]
+    }
+  }
+}
